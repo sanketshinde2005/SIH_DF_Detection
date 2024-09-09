@@ -13,8 +13,8 @@ const toggleMenu = ()=>{
 }
   return (
     <div className='md:flex justify-between  pt-8 pl-10 pr-10 md:flex-row h-20 flex flex-col gap-5 w-[100vw] ' >
-        <h1 className='text-[#398D8D] md:text-2xl italic font-bold text-xl '
-        >Homies Deepfake Detection</h1>
+        <h1 className='text-[#398D8D] md:text-3xl italic font-bold text-xl '
+        >Deepfake Detection</h1>
         
             <ul className={`flex md:gap-10 flex-col md:flex-row   transition-transform  duration-150 ease-in ${isopen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 md:flex'} md:active md:translate-y-0 md:opacity-100 flex flex-col gap-5  `}>
                 <li className='text-[#398D8D]  text-[1.2rem] font-bold italic leading=[24.2px]'><Link to="/">Home</Link></li>

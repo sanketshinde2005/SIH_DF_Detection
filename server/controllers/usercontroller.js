@@ -12,7 +12,7 @@ export const predict = async (req,res)=>{
         // console.log("returning 200");
         const flaskResponse = await axios.post('http://localhost:5001/receive-video', formData, {
             headers: formData.getHeaders(),
-          });
+          },);
 
 
 

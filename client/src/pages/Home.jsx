@@ -44,7 +44,7 @@ function Home() {
       setTimeout(()=>{
       setIsLoading(false) 
       setImage(imageUrl); 
-      setIspopped(false);
+      // setIspopped(false);
       },5000)
     console.log(response);
     if (response.status === 200) {
@@ -127,11 +127,13 @@ onChange={handleChange}
           </div>
         </div>
         <div className="flex justify-center" ref={ref}>
-          <img
-            src={image}
-            alt="Deepfake Detection"
-            className="w-full max-w-md rounded-lg shadow-md"
+          {
+            image &&(
+              <video  width="500"  controls  src={image}
           />
+            )
+          }
+          
         </div>
       </div>
     </div>
