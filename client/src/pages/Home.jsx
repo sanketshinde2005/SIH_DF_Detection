@@ -10,6 +10,11 @@ import { PREDICT_ROUTE } from "@/utils/constants";
 function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [image, setImage] = useState();
+  const [images, setImages] = useState([]);
+  const [classification, setClassification] = useState("");
+  const [averagePrediction, setAveragePrediction] = useState(0);
+
+
   const ref = useRef();
   const [ispopped, setIspopped] = useState(true);
   let imageUrl = undefined;
@@ -46,6 +51,10 @@ function Home() {
         },
       }
     );
+    const { images, classification, average_prediction } = response.data;
+    setImages(images);
+    setClassification(classification);
+    setAveragePrediction(average_prediction);
     console.log(response);
 
     setTimeout(() => {
@@ -137,10 +146,36 @@ function Home() {
           <img src="DeepfakeDetection_Facebook.gif" alt="funny gif" />
           <p className="text-right text-sm">Image credits: Facebook AI</p>
         </div>
-        <div className="flex justify-center" ref={ref}>
+        {/* <div className="flex justify-center" ref={ref}>
           {image && <video width="500" controls src={image} />}
-        </div>
+        </div> */}
+      
+        
       </div>
+
+      <div className=" w-full h-full flex flex-cols gap-2 ">
+                
+                {console.log(images.length)}
+                {
+                images.map((imageBase64, index) => (
+                  <div className="h-[200px] w-[90px]" >
+                         <img 
+                        key={index}
+                        src={`data:image/jpeg;base64,${imageBase64}`} 
+                        alt={`Cropped Frame ${index + 1}`} 
+                        
+                    />
+                  </div>
+                 
+                ))}
+            </div>
+            <div>
+              {
+                classification && (
+                  <h2>Result:{classification}</h2>
+                )
+              }
+            </div>
     </div>
   );
 }
