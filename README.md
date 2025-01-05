@@ -21,7 +21,11 @@
 
 - **Python**: v3.8 or higher  
 - **Node.js**: v14 or higher (for the frontend)  
-- **Docker**: (optional) for containerized deployment  
+- **Docker**: (optional) for containerized deployment
+
+## Demo Video
+https://youtu.be/KX2VRRwgv8w?si=humLvfBeLwM0hTJ9
+
 
 ## Getting Started
 
@@ -30,7 +34,3 @@
 ```bash
 git clone https:[//github.com/yourusername/fallacy-finder.git
 cd fallacy-finder](https://github.com/sanketshinde2005/SIH_DF_Detection)
-
-
-## Demo Video
-
